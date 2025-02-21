@@ -1,0 +1,6 @@
+To run server: 
+
+npx tsc (compiles typescript)
+
+node dist/server.js (runs compiled javascript)
+
