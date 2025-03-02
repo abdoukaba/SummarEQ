@@ -1,12 +1,15 @@
 import React from 'react';
 import { Dashboard } from '/src/pages/Dashboard.jsx';
+import SignupPage from './login/login';
 
-const App = () => {
+
+
+function App() {
   return (
-    <div className="font-sans bg-gray-100 dark:bg-gray-900">
+    <div class = "text-align">
       <Dashboard />
     </div>
   );
-};
+}
 
 export default App;
