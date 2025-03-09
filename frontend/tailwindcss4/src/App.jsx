@@ -6,9 +6,8 @@ import SignupPage from './login/login';
 
 function App() {
   return (
-    <div class = "text-align">
-      <Dashboard />
-    </div>
+    <SignupPage/>
+
   );
 }
 

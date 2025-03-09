@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './login.css';
+import logoImage from '../assets/summareqlogo.png'
 
 const TextField = ({ label, placeholder }) => (
   <div className="text-field">
@@ -14,29 +15,21 @@ const Icon = ({ className = '' }) => (
   <div className={`icon ${className}`}></div>
 );
 
+export const Logo = ({ className }) => (
+  <img src={logoImage} className={className} alt="SummarEQ Logo" />
+);
+
 const SignupPage = () => {
   return (
     <div className="container">
       <div className="header">
-        <div className="logo"></div>
+        <Logo className="logo"></Logo>
         <div className="menu-icon">
           <Icon />
         </div>
       </div>
 
-      <div className="left-panel">
-        <h1 className="title">What is SummarEQ?</h1>
-        <div className="description-box">
-          <p className="description-text">
-            Basic description and welcome message goes here.
-          </p>
-        </div>
-        <div className="link">
-          <Icon />
-        </div>
-      </div>
-
-      <div className="right-panel">
+      <div className="panel">
         <div className="user-icon">
           <Icon className="user-icon" />
         </div>
