@@ -3,6 +3,7 @@ import { LineChartComponent } from '../components/charts/LineChart';
 import { BarChartComponent } from '../components/charts/BarChart';
 import { userGrowthData, userActivityData, userTableData } from '../data/userData';
 import React from 'react';
+import { Input } from '../components/search/search';
 
 const summaryData = [
   { title: "Help", image: "/help.svg"},
@@ -12,6 +13,11 @@ const summaryData = [
 
 export const Dashboard = () => (
   <div className="min-h-screen w-screen flex flex-col items-stretch bg-gray-100 dark:bg-gray-900 p-6">
+
+     {/* Search Input Component */}
+     <div className="mb-6">
+      <Input />
+    </div>
 
     <div style={{background: "#F5EFE7", color: "black"}}className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md mb-6 w-full">
       <h2 className="text-xl font-semibold mb-4">Communication</h2>
