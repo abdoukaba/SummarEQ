@@ -12,6 +12,10 @@ app.use(bodyParser.json());
 app.use("/ghlhook", exampleRoutes);
 
 app.get("/", (req, res) => {
+  res.send("Server is running!");
+});
+
+app.get("/", (req, res) => {
     res.send("Server is running!");
   });
 
