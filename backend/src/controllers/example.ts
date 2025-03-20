@@ -19,6 +19,8 @@ export const getExample: RequestHandler = async (req, res) => {
 
 export const createExample: RequestHandler = async (req, res) => {
   const { type, email, subject, timestamp } = req.body;
+
+   const PORT = process.env.OPEN_API_KEY;
   try {
     if (req.body.type === "verification") {
       res.send({ challenge: req.body.challenge });
