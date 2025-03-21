@@ -1,17 +1,23 @@
-import express from "express";
-import bodyParser from "body-parser";
+import "module-alias/register";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+import app from "../src/app";
 
-const app = express();
-const PORT = 5001;
+dotenv.config();
 
-// Middleware to parse JSON
-app.use(bodyParser.json());
+const PORT = process.env.PORT;
+const MONGODB_URI = process.env.MONGODB_URI;
 
-app.post("/webhook", (req, res) => {
-  console.log("Webhook received:", req.body);
-  res.status(200).json({ message: "Webhook received successfully!" });
-});
+if (!MONGODB_URI) {
+  throw new Error("MONGODB_URI is not defined");
+}
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+mongoose
+  .connect(MONGODB_URI)
+  .then(() => {
+    console.log("Mongoose connected!");
+    app.listen(PORT, () => {
+      console.log(`MongoDB server running on ${PORT}`);
+    });
+  })
+  .catch(console.error);
