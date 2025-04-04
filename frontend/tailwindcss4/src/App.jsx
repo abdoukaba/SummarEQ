@@ -1,14 +1,18 @@
 import React from 'react';
-import { Dashboard } from '/src/pages/Dashboard.jsx';
-import HomePage from '/src/pages/home.jsx';
-import SignupPage from './login/login';
+import Dashboard from './pages/Dashboard';
+import HomePage from './pages/home';
+import SignupPage from './pages/login';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 function App() {
   return (
-    <div class = "text-align">
-      <HomePage/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/signup" element={<SignupPage/>} />
+        <Route path="/home" element={<HomePage />}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
-
 export default App;

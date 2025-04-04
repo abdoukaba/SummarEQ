@@ -11,7 +11,7 @@ const summaryData = [
   { title: "Continue Conversation", image: "/avatar.svg"},
 ];
 
-export const Dashboard = () => (
+const Dashboard = () => (
   <div className="min-h-screen w-screen flex flex-col items-stretch bg-gray-100 dark:bg-gray-900 p-6">
 
      {/* Search Input Component */}
@@ -46,3 +46,4 @@ export const Dashboard = () => (
 
   </div>
 );
+export default Dashboard;
