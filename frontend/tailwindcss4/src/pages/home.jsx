@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Input } from '../components/search/search';
 import './home.css';
+import NavBar from "../components/NavBar";
 
 export default function HomePage() {
   const [contacts, setContacts] = useState([]);
@@ -15,6 +16,10 @@ export default function HomePage() {
   return (
     <div className="imessage-container">
       {/* Sidebar */}
+      <div className="nav-bar">
+        {/*<NavBar />* MUST FIX STYLE TO ADD THIS*/}
+      </div>
+      
       <div className="sidebar">
         <h2>Conversations</h2>
         <div>

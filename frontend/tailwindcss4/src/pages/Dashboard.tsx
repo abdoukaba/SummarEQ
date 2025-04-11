@@ -4,6 +4,7 @@ import { BarChartComponent } from '../components/charts/BarChart';
 import { userGrowthData, userActivityData, userTableData } from '../data/userData';
 import React from 'react';
 import { Input } from '../components/search/search';
+import NavBar from '../components/NavBar';
 
 const summaryData = [
   { title: "Help", image: "/help.svg"},
@@ -13,7 +14,7 @@ const summaryData = [
 
 const Dashboard = () => (
   <div className="min-h-screen w-screen flex flex-col items-stretch bg-gray-100 dark:bg-gray-900 p-6">
-
+    <NavBar />
      {/* Search Input Component */}
      <div className="mb-6">
       <Input />

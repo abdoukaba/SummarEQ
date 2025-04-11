@@ -5,6 +5,14 @@
   overflow: hidden;
 }
 
+.panel .login-text {
+  font-size: 1.7em;
+  font-weight: bold;
+  color: #1a1a40;
+  margin-bottom: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
 /* Header - now responsive */
 .header {
   position: absolute;
