@@ -1,13 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './login.css';
-import logoImage from '../assets/summareqlogo.png'
+import logoImage from '../assets/summareqlogo.png';
+import { useNavigate } from 'react-router-dom';
 
-const TextField = ({ label, placeholder }) => (
+const TextField = ({ label, value, onChange, type = "text" }) => (
   <div className="text-field">
-    <div className="contents">
-      <span className="username">{label}</span>
-      <span className="value">{placeholder}</span>
-    </div>
+    <input type={type} value={value} onChange={onChange} placeholder={label} className="input" />
   </div>
 );
 
@@ -20,10 +18,18 @@ export const Logo = ({ className }) => (
 );
 
 const SignupPage = () => {
+  const navigation = useNavigate(); 
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleClick = () => {
+   navigation('/home');
+  }
+
   return (
     <div className="container">
       <div className="header">
-        <Logo className="logo"></Logo>
+        <Logo className="logo" />
         <div className="menu-icon">
           <Icon />
         </div>
@@ -35,11 +41,12 @@ const SignupPage = () => {
         </div>
         <h2 className="login-text">Log-In</h2>
 
-        <TextField label="Username" placeholder="Enter username" />
-        <TextField label="Password" placeholder="Enter password" />
+        <TextField label="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
+        <TextField label="Password" value={password} onChange={(e) => setPassword(e.target.value)} type="password" />
+
+        <button className="signup-button" onClick={handleClick}>Sign-In</button>
 
         <div className="signup-text">
-          Sign-Up
           <div className="external-link-icon">
             <Icon />
           </div>
