@@ -13,10 +13,11 @@ const summaryData = [
 ];
 
 const Dashboard = () => (
-  <div className="min-h-screen w-screen flex flex-col items-stretch bg-gray-100 dark:bg-gray-900 p-6">
+  <div className="min-h-screen w-screen flex flex-col items-stretch bg-gray-100 dark:bg-[#121212]">
     <NavBar />
-     {/* Search Input Component */}
-     <div className="mb-6">
+
+     <div className="mb-6 w-100 m-5">
+      <p className='text-xl'>Search</p>
       <Input />
     </div>
 
