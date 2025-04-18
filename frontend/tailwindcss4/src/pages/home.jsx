@@ -14,12 +14,11 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="imessage-container">
-      {/* Sidebar */}
-      <div className="nav-bar">
-        {/*<NavBar />* MUST FIX STYLE TO ADD THIS*/}
+    <div>
+      <div className="header">
+        <NavBar />
       </div>
-      
+      <div className="imessage-container">
       <div className="sidebar">
         <h2>Conversations</h2>
         <div>
@@ -53,6 +52,7 @@ export default function HomePage() {
           <div className="placeholder">Select a chat to start messaging</div>
         )}
       </div>
+    </div>
     </div>
   );
 }

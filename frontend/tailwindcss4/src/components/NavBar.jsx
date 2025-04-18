@@ -4,7 +4,7 @@ import Image from '../assets/summareqlogo.png';
 const NavBar = () => {
     return (
         <nav>
-            <div className='bg-blue-950 h-15 w-full mb-25 w-screen flex px-3  items-center'>
+            <div className='bg-[#1e1e1e] h-15 w-full w-screen flex px-3  items-center'>
                 <div className='w-50 mt-1.5'>
                     <img src={Image} alt="logo"/>
                 </div>

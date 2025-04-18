@@ -27,28 +27,29 @@ const SignupPage = () => {
   }
 
   return (
-    <div className="container">
+    <div>
       <div className="header">
         <Logo className="logo" />
         <div className="menu-icon">
           <Icon />
         </div>
       </div>
+      <div className="container">
+        <div className="panel">
+          <div className="user-icon">
+            <Icon className="user-icon" />
+          </div>
+          <h2 className="login-text">Log-In</h2>
 
-      <div className="panel">
-        <div className="user-icon">
-          <Icon className="user-icon" />
-        </div>
-        <h2 className="login-text">Log-In</h2>
+          <TextField label="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
+          <TextField label="Password" value={password} onChange={(e) => setPassword(e.target.value)} type="password" />
 
-        <TextField label="Username" value={username} onChange={(e) => setUsername(e.target.value)} />
-        <TextField label="Password" value={password} onChange={(e) => setPassword(e.target.value)} type="password" />
+          <button className="signup-button" onClick={handleClick}>Sign-In</button>
 
-        <button className="signup-button" onClick={handleClick}>Sign-In</button>
-
-        <div className="signup-text">
-          <div className="external-link-icon">
-            <Icon />
+          <div className="signup-text">
+            <div className="external-link-icon">
+              <Icon />
+            </div>
           </div>
         </div>
       </div>

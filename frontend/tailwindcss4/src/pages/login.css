@@ -1,10 +1,3 @@
-.container {
-  background: #f2f2f2;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
 .panel .login-text {
   font-size: 1.7em;
   font-weight: bold;
@@ -13,7 +6,6 @@
   font-family: 'Arial', sans-serif;
 }
 
-/* Header - now responsive */
 .header {
   position: absolute;
   width: 100%;
