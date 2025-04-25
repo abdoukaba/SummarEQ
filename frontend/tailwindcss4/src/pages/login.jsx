@@ -27,17 +27,14 @@ const SignupPage = () => {
   }
 
   return (
-    <div>
+    <div className='all'>
       <div className="header">
         <Logo className="logo" />
-        <div className="menu-icon">
-          <Icon />
-        </div>
       </div>
       <div className="container">
         <div className="panel">
           <div className="user-icon">
-            <Icon className="user-icon" />
+            {/* <Icon className="user-icon" /> */}
           </div>
           <h2 className="login-text">Log-In</h2>
 
@@ -48,7 +45,6 @@ const SignupPage = () => {
 
           <div className="signup-text">
             <div className="external-link-icon">
-              <Icon />
             </div>
           </div>
         </div>

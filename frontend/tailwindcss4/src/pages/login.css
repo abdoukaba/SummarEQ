@@ -1,95 +1,138 @@
-.panel .login-text {
-  font-size: 1.7em;
-  font-weight: bold;
-  color: #1a1a40;
-  margin-bottom: 20px;
+/* General styles */
+.all {
+  background-color: #121212; /* true dark */
   font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
 }
 
-.header {
-  position: absolute;
+.container {
+  background-color: transparent; /* ensures it doesn't override the dark bg */
+  height: 100%;
   width: 100%;
-  height: auto; /* Maintains approximate ratio of original 51px/700px */
-  background: linear-gradient(90deg, #1a1a40 7%, #151783 100%);
 }
 
-/* Logo - position relative to header */
+/* Header bar */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #2c2c2c; /* solid dark like dashboard */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+/* Logo inside header */
 .logo {
   align-self: flex-start;
   width: 13%;
   margin: 5px 0px 2px;
 }
 
+/* Center panel (login box) */
 .panel {
   position: absolute;
-  width: 41%; /* 308px/750px */
-  height: 72.8%; /* 335px/460px */
-  top: 18%; /* 83px/460px */
+  width: 41%;
+  height: 72.8%;
+  top: 18%;
   border-radius: 33px;
   right: 29.5%;
   left: 29.5%;
   align-self: center;
   align-items: center;
-  background: #ffffff;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: #2c2c2c;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
   flex-direction: column;
   justify-content: center;
   display: flex;
+  color: white;
 }
 
-.panel .login-text{
-  color: black;
+/* Login header text */
+.panel .login-text {
+  font-size: 1.7em;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20px;
 }
 
-/* Convert other absolute positions to percentages */
-.title {
-  left: 16.07%;
-  right: 21.79%;
-  top: 8.33%;
-  bottom: 82.14%;
-}
-
-.link {
-  left: 78.21%;
-  right: 16.07%;
-  top: 10.71%;
-  bottom: 84.52%;
-}
-
+/* Input styling */
 .text-field .input {
-  padding: 10px 16px; /* Adds padding inside the input field for better text visibility */
-  margin: 7%; /* Adds margin for spacing between fields */
-  box-sizing: border-box; /* Includes padding and border in the element's total width and height */
-  border: 2px solid #ccc; /* Adds a border with a light gray color */
-  border-radius: 4px; /* Rounds the corners of the input fields */
-  transition: border-color 0.3s; /* Smooth transition for border color change */
-  color: black;
+  padding: 10px 16px;
+  margin: 7%;
+  box-sizing: border-box;
+  background-color: #2c2c2c;
+  border: 1px solid #444;
+  border-radius: 4px;
+  color: #f0f0f0;
+  width: 100%;
+  transition: border-color 0.3s, background-color 0.3s;
 }
 
+.text-field .input::placeholder {
+  color: #888;
+}
+
+.text-field .input:focus {
+  outline: none;
+  border-color: #888;
+  background-color: #333;
+}
+
+/* Login button */
 .signup-button {
-  background-color: #0a3c71;
+  background-color: #0056b3;
   color: white;
   padding: 15px 25px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
+  transition: background-color 0.3s ease;
 }
 
 .signup-button:hover {
-  background-color: #0056b3;
+  background-color: #0a84ff;
 }
 
+/* Optional icon placeholder */
+.icon {
+  width: 40px;
+  height: 40px;
+  background-color: #444;
+  border-radius: 50%;
+}
 
+/* User icon above text */
+.user-icon {
+  margin-bottom: 20px;
+}
 
-/* ... (apply similar percentage conversions to other elements) ... */
+/* External link icon area (e.g. forgot password) */
+.signup-text {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.external-link-icon {
+  color: #aaa;
+}
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
   .container {
     min-width: 320px;
   }
-  
+
   .left-panel,
   .right-panel {
     position: relative;
@@ -101,17 +144,17 @@
   }
 
   .input {
-    width: 200px; /* Adjust width as needed */
+    width: 200px;
     padding: 8px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
   }
-  
+
   .header {
     height: 60px;
   }
-  
+
   .logo {
     width: 120px;
     left: 10px;
@@ -126,9 +169,8 @@
     cursor: pointer;
     margin-top: 20px;
   }
-  
+
   .button:hover {
     background-color: #0056b3;
   }
-  
 }

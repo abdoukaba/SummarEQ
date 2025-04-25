@@ -15,9 +15,7 @@ export default function HomePage() {
 
   return (
     <div>
-      <div className="header">
         <NavBar />
-      </div>
       <div className="imessage-container">
       <div className="sidebar">
         <h2>Conversations</h2>
