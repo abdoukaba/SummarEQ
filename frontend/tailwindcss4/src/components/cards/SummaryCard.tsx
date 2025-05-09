@@ -43,14 +43,6 @@ const SummaryCard = ({ summary }: { summary: Summary }) => {
               <ul>{summary.messageTypes.map((type, i) => <li key={i}>{type}</li>)}</ul>
             </>
           )}
-
-          {Array.isArray(summary.messageBodies) && summary.messageBodies?.length > 0 && (
-            <>
-              <p><strong>Message Bodies:</strong></p>
-              <ul>{summary.messageBodies.map((body, i) => <li key={i}>{body}</li>)}</ul>
-            </>
-          )}
-
           {Array.isArray(summary.timestamps) && summary.timestamps?.length > 0 && (
             <>
               <p><strong>Timestamps:</strong></p>
