@@ -2,55 +2,31 @@ import { useEffect, useState } from "react";
 import { Input } from '../components/search/search';
 import './home.css';
 import NavBar from "../components/NavBar";
+import SummaryCard from "../components/cards/SummaryCard";
+import mockData from '../data/mockData.json'; 
+
 
 export default function HomePage() {
-  const [contacts, setContacts] = useState([]);
-  const [selectedChat, setSelectedChat] = useState(null);
+  const [summaries, setSummaries] = useState([]);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.json())
-      .then((data) => setContacts(data));
+    console.log("Loaded mock data:", mockData);  
+    setSummaries(mockData);
   }, []);
 
   return (
-    <div>
-        <NavBar />
-      <div className="imessage-container">
-      <div className="sidebar">
-        <h2>Conversations</h2>
-        <div>
-            <Input type="text" placeholder="Search contacts" />
-        </div>
-        <ul>
-          {contacts.map((contact) => (
-            <li
-              key={contact.id}
-              onClick={() => setSelectedChat(contact)}
-              className={selectedChat?.id === contact.id ? "active" : ""}
-            >
-              {contact.name}
-            </li>
-          ))}
-        </ul>
+    <div className="summary-page">
+      <NavBar />
+      <div className="search-bar">
+        <h2>Search</h2>
+        <Input type="text" placeholder="Search contacts" />
       </div>
-      
-      {/* Chat Window */}
-      <div className="chat-window">
-        {selectedChat ? (
-          <div className="chat-content">
-            <h2>Contacts</h2>
-            <p>{selectedChat.email}</p>
-            <p>{selectedChat.phone}</p>
-            <h2>Notes</h2>
-            <p>{selectedChat.company.name}</p>
-            <p>{selectedChat.company.catchPhrase}</p>
-          </div>
-        ) : (
-          <div className="placeholder">Select a chat to start messaging</div>
-        )}
+
+      <div className="summary-panel">
+        {summaries.map((summary) => (
+          <SummaryCard key={summary._id} summary={summary} />
+        ))}
       </div>
-    </div>
     </div>
   );
 }

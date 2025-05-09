@@ -1,0 +1,45 @@
+[
+    {
+      "_id": "1",
+      "firstName": "Jordan",
+      "lastName": "Reed",
+      "email": "jreed@example.com",
+      "phone": "555-123-4567",
+      "locationId": "LOC1001",
+      "contactId": "CON2001",
+      "messageTypes": ["email", "sms"],
+      "messageBodies": ["Hello, please confirm your appointment.", "Reminder: Your session is tomorrow."],
+      "timestamps": ["2025-05-08T10:00:00Z", "2025-05-08T15:30:00Z"],
+      "summary": "Client responded positively to the outreach.",
+      "clientContext": "Follow-up required next week."
+    },
+    {
+      "_id": "2",
+      "firstName": "Taylor",
+      "lastName": "Monroe",
+      "email": "tmonroe@example.com",
+      "phone": "555-987-6543",
+      "locationId": "LOC1002",
+      "contactId": "CON2002",
+      "messageTypes": ["email"],
+      "messageBodies": ["Please complete the attached form before our next meeting."],
+      "timestamps": ["2025-05-07T09:45:00Z"],
+      "summary": "Awaiting paperwork submission.",
+      "clientContext": "Prefers communication by email."
+    },
+    {
+      "_id": "3",
+      "firstName": "Morgan",
+      "lastName": "Shaw",
+      "email": "mshaw@example.com",
+      "phone": "555-321-7890",
+      "locationId": "LOC1003",
+      "contactId": "CON2003",
+      "messageTypes": [],
+      "messageBodies": [],
+      "timestamps": [],
+      "summary": "",
+      "clientContext": ""
+    }
+  ]
+  
